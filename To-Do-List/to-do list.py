@@ -86,30 +86,31 @@ def exit_app():
 app = tk.Tk()
 app.title("To-Do List")
 
+# Make the window always on top
+app.wm_attributes("-topmost", True)
+
 # Remove the default title bar
 app.overrideredirect(True)
-
-# Custom title bar
-title_bar = tk.Frame(app, bg="#1E1E1E")
-title_bar.pack(side="top", fill="x")
-
-# Title label
-title_label = tk.Label(title_bar, text="To-Do List", bg="#1E1E1E", fg="white", font=("Arial", 11, "bold"))
-title_label.pack(side="left", padx=2)
-
-# Exit button on the title bar
-close_button = tk.Button(title_bar, text="X", bg="#1E1E1E", fg="red", font=("Arial", 11, "bold"),
-                         command=exit_app, relief="flat")
-close_button.pack(side="right", padx=2)
 
 # Allow the user to drag the window
 def move_window(event):
     app.geometry(f"+{event.x_root}+{event.y_root}")
 
-title_bar.bind("<B1-Motion>", move_window)
+app.bind("<B1-Motion>", move_window)
 
 # Apply Dark Theme for Main Content
-app.configure(bg="#1E1E1E", bd=1, highlightbackground="white", highlightthickness=1)
+app.configure(bg="#1E1E1E", bd=1,)
+
+# Make the window transparent when it loses focus
+def on_focus_out(event):
+    app.wm_attributes("-alpha", 0.5)  # Make the window semi-transparent
+
+def on_focus_in(event):
+    app.wm_attributes("-alpha", 1.0)  # Restore full opacity
+
+# Bind focus events
+app.bind("<FocusOut>", on_focus_out)
+app.bind("<FocusIn>", on_focus_in)
 
 # Task List Display
 task_frame = tk.Frame(app, bg="#2E2E2E")
