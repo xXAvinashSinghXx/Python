@@ -1,0 +1,4 @@
+apple|True
+mango|True
+banana|True
+cherry|False
