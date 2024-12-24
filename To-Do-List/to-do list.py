@@ -133,7 +133,12 @@ input_button_frame.pack(pady=5, padx=5, fill="x")
 
 # Input Field with Underline
 input_frame = tk.Frame(input_button_frame, bg="#1E1E1E") 
-input_frame.pack(side="right", expand=True, fill="x", padx=(0, 5))
+input_frame.pack(
+    side="right", 
+    expand=True, 
+    fill="x", 
+    padx=(0, 5)
+)
 
 # Input Field with Enhanced Styling
 task_entry = tk.Entry(
