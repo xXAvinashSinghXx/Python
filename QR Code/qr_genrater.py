@@ -1,7 +1,7 @@
 import qrcode
 
 # Send to payment location
-file_url = "https://drive.google.com/file/d/1jB-vSYkSqhU6RhV9H5dDRt5ITXuGSyh6/view?usp=sharing"   
+file_url = "www.youtube.com"   
 
 # Generate the QR code
 qr = qrcode.QRCode(

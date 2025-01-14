@@ -1,9 +1,5 @@
-Numeric|True
-Sequence|True
-Set|False
-Mapping|True
-Boolean|True
-Binary|True
-None|True
-Specialized|False
-Text|True
+Kabir|False
+Rpg|False
+Vickey|False
+Ishaan|False
+Prabhisher|False
