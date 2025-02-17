@@ -3,7 +3,7 @@ from tkinter import messagebox
 import os
 
 # File to store tasks
-TASK_FILE = "Completed\To-Do-List\list.txt"
+TASK_FILE = "To-Do-List/list.txt"
 
 # List to store tasks and their check states
 tasks = []
